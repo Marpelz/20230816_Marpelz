@@ -1,0 +1,155 @@
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt
+$ mkdir TestRepo
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt
+$ cd TestRepo
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo
+$ git init
+Initialized empty Git repository in C:/Users/Anwender/Desktop/Schulprojekt/TestR
+epo/.git/
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git add hello.java
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git remote add origin https://github.com/Marpelz/20230816_Marpelz.git
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git push -u origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/Marpelz/20230816_Marpelz.
+git'
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ ^C
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello.java
+
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git commit -m "Added hello.java"
+[master (root-commit) beb1d5b] Added hello.java
+ 1 file changed, 10 insertions(+)
+ create mode 100644 hello.java
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 385 bytes | 385.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Marpelz/20230816_Marpelz.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git branch -m master main
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git checkout -b testbranch
+Switched to a new branch 'testbranch'
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (testbranch)
+$ git checkout main
+Switched to branch 'main'
+M       hello.java
+Your branch is up to date with 'origin/master'.
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git merge testbranch
+Already up to date.
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'main' on GitHub by visiting:
+remote:      https://github.com/Marpelz/20230816_Marpelz/pull/new/main
+remote:
+To https://github.com/Marpelz/20230816_Marpelz.git
+ * [new branch]      main -> main
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git branch -d testbranch
+Deleted branch testbranch (was beb1d5b).
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git add hello.java
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git commit -m "Changes in hello.java"
+[main 10b64b2] Changes in hello.java
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 414 bytes | 414.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Marpelz/20230816_Marpelz.git
+   beb1d5b..10b64b2  main -> main
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (main)
+$ git checkout master
+Switched to a new branch 'master'
+branch 'master' set up to track 'origin/master'.
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git merge main
+Updating beb1d5b..10b64b2
+Fast-forward
+ hello.java | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: Bypassed rule violations for refs/heads/master:
+remote:
+remote: - Cannot change this locked branch
+remote:
+To https://github.com/Marpelz/20230816_Marpelz.git
+   beb1d5b..10b64b2  master -> master
+
+Anwender@DESKTOP-ILQNAF5 MINGW64 ~/Desktop/Schulprojekt/TestRepo (master)
+$ git push origin master
+Everything up-to-date
